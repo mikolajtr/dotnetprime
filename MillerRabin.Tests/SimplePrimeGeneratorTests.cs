@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using MillerRabin.PrimeGenerators;
 using NUnit.Framework;
 
 namespace MillerRabin.Tests

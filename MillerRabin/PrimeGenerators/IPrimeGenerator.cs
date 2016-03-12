@@ -1,7 +1,6 @@
-﻿using System;
-using System.Numerics;
+﻿using System.Numerics;
 
-namespace MillerRabin
+namespace MillerRabin.PrimeGenerators
 {
     public interface IPrimeGenerator : IBasePrimeGenerator
     {

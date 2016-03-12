@@ -41,10 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAsyncPrimeGenerator.cs" />
-    <Compile Include="IBasePrimeGenerator.cs" />
-    <Compile Include="IPrimeGenerator.cs" />
-    <Compile Include="SimplePrimeGenerator.cs" />
+    <Compile Include="Helpers\PrimeGeneratorHelpers.cs" />
+    <Compile Include="PrimeGenerators\IAsyncPrimeGenerator.cs" />
+    <Compile Include="PrimeGenerators\IBasePrimeGenerator.cs" />
+    <Compile Include="PrimeGenerators\IPrimeGenerator.cs" />
+    <Compile Include="PrimeGenerators\SimplePrimeGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

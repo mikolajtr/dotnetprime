@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Numerics;
 
-namespace MillerRabin
+namespace MillerRabin.PrimeGenerators
 {
     public interface IBasePrimeGenerator
     {

@@ -1,46 +1,16 @@
 ﻿using System;
 using System.Numerics;
+using MillerRabin.Helpers;
 
-namespace MillerRabin
+namespace MillerRabin.PrimeGenerators
 {
     public class SimplePrimeGenerator : IPrimeGenerator
     {
         public SimplePrimeGenerator()
         {
-            RandomInteger = (min, max) =>
-            {
-                // using snippet from http://stackoverflow.com/questions/17357760/how-can-i-generate-a-random-biginteger-within-a-certain-range
-                var random = new Random();
-                byte[] bytes = max.ToByteArray();
+            RandomInteger = PrimeGeneratorHelpers.GenerateRandomBigInteger;
 
-                random.NextBytes(bytes);
-                bytes[bytes.Length - 1] &= 0x7F; //force sign bit to positive
-                var value = new BigInteger(bytes);
-                var result = (value % min) + (max - min);
-
-                return result;
-            };
-
-            //RandomInteger = (min, max) =>
-            //{
-            //    var random = new Random();
-            //    return random.Next((int) min, (int) max);
-            //};
-
-            Power = (x, n) =>
-            {
-                if (n == 0)
-                {
-                    return 1;
-                }
-
-                if (n % 2 == 1)
-                {
-                    return x*Power(x, n - 1);
-                }
-                var a = Power(x, n/2);
-                return a * a;
-            };
+            Power = PrimeGeneratorHelpers.ExponentBySquaring;
         }
 
         public Func<BigInteger, BigInteger, BigInteger> RandomInteger { get; set; }
