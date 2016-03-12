@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAsyncPrimeGenerator.cs" />
+    <Compile Include="IBasePrimeGenerator.cs" />
     <Compile Include="IPrimeGenerator.cs" />
     <Compile Include="SimplePrimeGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
