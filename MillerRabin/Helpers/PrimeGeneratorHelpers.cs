@@ -14,7 +14,7 @@ namespace MillerRabin.Helpers
             random.NextBytes(bytes);
             bytes[bytes.Length - 1] &= 0x7F; //force sign bit to positive
             var value = new BigInteger(bytes);
-            var result = (value % min) + (max - min);
+            var result = (value % (max - min + 1)) + min;
 
             return result;
         }
@@ -30,7 +30,7 @@ namespace MillerRabin.Helpers
             {
                 return x * ExponentBySquaring(x, n - 1);
             }
-            var a = ExponentBySquaring(x, n / 2);
+            BigInteger a = ExponentBySquaring(x, n / 2);
             return a * a;
         }
     }

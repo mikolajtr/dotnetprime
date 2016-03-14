@@ -42,10 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\PrimeGeneratorHelpers.cs" />
-    <Compile Include="PrimeGenerators\IAsyncPrimeGenerator.cs" />
     <Compile Include="PrimeGenerators\IBasePrimeGenerator.cs" />
     <Compile Include="PrimeGenerators\IPrimeGenerator.cs" />
-    <Compile Include="PrimeGenerators\SimplePrimeGenerator.cs" />
+    <Compile Include="PrimeGenerators\PrimeGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

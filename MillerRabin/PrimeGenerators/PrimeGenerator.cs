@@ -53,18 +53,27 @@ namespace MillerRabin.PrimeGenerators
 
             for (int i = 0; i < k; i++)
             {
-                BigInteger a = RandomInteger(1, n);
+                if (!PrimalityTest(number, d, s))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
-                if (Power(a, d) % number == 1)
+        private bool PrimalityTest(BigInteger number, BigInteger d, BigInteger s)
+        {
+            BigInteger a = RandomInteger(1, number - 1);
+
+            if (Power(a, d) % number == 1)
+            {
+                return true;
+            }
+            for (int j = 0; j < s; j++)
+            {
+                if (Power(a, Power(2, j) * d) % number == number - 1)
                 {
                     return true;
-                }
-                for (int j = 0; j < s; j++)
-                {
-                    if (Power(a, Power(2, j)*d) % number == number - 1)
-                    {
-                        return true;
-                    }
                 }
             }
             return false;
