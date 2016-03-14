@@ -4,9 +4,9 @@ using MillerRabin.Helpers;
 
 namespace MillerRabin.PrimeGenerators
 {
-    public class SimplePrimeGenerator : IPrimeGenerator
+    public class PrimeGenerator : IPrimeGenerator
     {
-        public SimplePrimeGenerator()
+        public PrimeGenerator()
         {
             RandomInteger = PrimeGeneratorHelpers.GenerateRandomBigInteger;
 
@@ -17,7 +17,7 @@ namespace MillerRabin.PrimeGenerators
 
         public Func<BigInteger, BigInteger, BigInteger> Power { get; set; }
 
-        public BigInteger GeneratePrime(BigInteger min, BigInteger max, int k)
+        public virtual BigInteger GeneratePrime(BigInteger min, BigInteger max, int k)
         {
             BigInteger result;
 
@@ -29,7 +29,7 @@ namespace MillerRabin.PrimeGenerators
             return result;
         }
 
-        public bool IsPrime(BigInteger number, int k)
+        public virtual bool IsPrime(BigInteger number, int k)
         {
             if (number == 2 || number == 5)
             {

@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace MillerRabin.Tests
 {
     [TestFixture]
-    public class SimplePrimeGeneratorTests
+    public class PrimeGeneratorTests
     {
         private int _k;
         private int _n;
@@ -20,7 +20,7 @@ namespace MillerRabin.Tests
             _n = 7;
             _m = 6561;
             _primes = new[] {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59};
-            _generator = new SimplePrimeGenerator();
+            _generator = new PrimeGenerator();
         }
 
         [Test]
